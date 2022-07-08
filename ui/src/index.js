@@ -27,8 +27,9 @@ import dashboard from './visualizations/dashboard';
 import codeOwnershipRiver from './visualizations/code-ownership-river';
 import issueImpact from './visualizations/issue-impact';
 import hotspotDials from './visualizations/hotspot-dials';
+import coChangeGraph from './visualizations/co-change-graph';
 
-const visualizationModules = [dashboard, codeOwnershipRiver, issueImpact, hotspotDials];
+const visualizationModules = [dashboard, codeOwnershipRiver, issueImpact, hotspotDials, coChangeGraph];
 
 const visualizations = {};
 _.each(visualizationModules, viz => {
