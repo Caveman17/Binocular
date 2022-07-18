@@ -8,7 +8,7 @@ import { inflect } from 'inflection';
 import SearchBox from '../../components/SearchBox';
 import FilterBox from '../../components/FilterBox';
 import styles from './styles.scss';
-import { onNavigationModeChange } from './sagas';
+import { setNavigationMode } from './sagas';
 
 import { graphQl, emojify } from '../../utils';
 import { createAction } from 'redux-actions';
@@ -25,7 +25,10 @@ const mapStateToProps = (state /*, ownProps*/) => {
 
 const mapDispatchToProps = (dispatch /*, ownProps*/) => {
   return {
-    onNavigationModeChange: navigationMode => dispatch(onNavigationModeChange(navigationMode))
+    onNavigationModeChange: navigationMode => {
+      console.log("Nav Mode: " + navigationMode)
+      dispatch(setNavigationMode(navigationMode))
+    }
   };
 };
 

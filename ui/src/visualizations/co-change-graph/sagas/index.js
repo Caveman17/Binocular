@@ -9,7 +9,7 @@ import Promise from 'bluebird';
 import { fetchFactory, timestampedActionFactory, mapSaga } from '../../../sagas/utils.js';
 import { graphQl } from '../../../utils';
 
-export const onNavigationModeChange = createAction('ON_NAVIGATION_MODE_CHANGE');
+export const setNavigationMode = createAction('SET_NAVIGATION_MODE');
 
 export default function*() {
   yield testFunction();
@@ -17,7 +17,7 @@ export default function*() {
 }
 
 export function* watchNavigationChange() {
-  yield takeEvery('ON_NAVIGATION_MODE_CHANGE', testFunction);
+  yield takeEvery('SET_NAVIGATION_MODE', testFunction);
 }
 
 export const testFunction = fetchFactory(
